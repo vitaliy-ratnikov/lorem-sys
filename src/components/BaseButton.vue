@@ -82,6 +82,7 @@ export default {
     &:active,
     &:focus {
       color: #fff;
+      border: vw(1px) solid #ffffff;
     }
   }
 }

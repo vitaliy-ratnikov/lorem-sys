@@ -49,7 +49,7 @@
           </ul>
 
           <div class="hero__link-wrap">
-            <base-button class="hero__link" href="#" is-link accent
+            <base-button class="hero__link" href="#order" is-link accent
               >Заказать</base-button
             >
             <base-button class="hero__link" href="#" is-link secondary
@@ -59,7 +59,7 @@
         </div>
       </base-container>
     </section>
-    <section class="checkout">
+    <section class="checkout" id="order">
       <base-container>
         <h2 class="checkout__title">
           Оформление <span class="title-accent">заказа</span>
@@ -126,26 +126,20 @@
         </h4>
         <div class="footer__payment footer-payment">
           <a href="#" class="footer-payment__link">
-            <img
-              src="@/assets/img/qiwi.png"
-              alt="qiwi-icon"
-              width="99"
-              height="20"
-          /></a>
+            <svg class="scheme-list__icon" width="99" height="20">
+              <use xlink:href="@/assets/img/icons/sprite.svg#qiwi"></use>
+            </svg>
+          </a>
           <a href="#" class="footer-payment__link">
-            <img
-              src="@/assets/img/yandex.png"
-              alt="yandex-icon"
-              width="115"
-              height="20"
-          /></a>
+            <svg class="scheme-list__icon" width="116" height="20">
+              <use xlink:href="@/assets/img/icons/sprite.svg#yandex"></use>
+            </svg>
+          </a>
           <a href="#" class="footer-payment__link">
-            <img
-              src="@/assets/img/webmoney.png"
-              alt="webmoney-icon"
-              width="101"
-              height="20"
-          /></a>
+            <svg class="scheme-list__icon" width="102" height="20">
+              <use xlink:href="@/assets/img/icons/sprite.svg#web"></use>
+            </svg>
+          </a>
         </div>
 
         <div class="footer__contacts footer-contacts">
@@ -188,7 +182,7 @@ export default {
   methods: {
     showNav() {
       this.isNavOpen = !this.isNavOpen;
-      if (this.isNavOpen == true) {
+      if (this.isNavOpen === true) {
         document.body.classList.add("nav-open");
       } else {
         document.body.classList.remove("nav-open");
@@ -393,8 +387,8 @@ export default {
   }
 
   &__icon {
-    width: vw(55px);
-    height: vw(55px);
+    max-width: 100%;
+    height: auto;
   }
 
   &__text {
@@ -499,7 +493,7 @@ export default {
   .btn {
     font-size: vw-m(9px);
     line-height: 1.2;
-    padding: vw-m(5px);
+    padding: vw-m(7px);
     border-radius: vw-m(2px);
     border: vw-m(1px) solid transparent;
 
@@ -601,6 +595,7 @@ export default {
 
     &.active {
       display: block;
+      padding-top: vw-m(40px);
     }
 
     &__item {
@@ -680,10 +675,10 @@ export default {
     padding: vw-m(30px) 0;
 
     &__title {
-      font-size: vw-m(13px);
+      font-size: vw-m(14px);
     }
     &__subtitle {
-      font-size: vw-m(9px);
+      font-size: vw-m(10px);
     }
 
     &__list {
@@ -705,11 +700,6 @@ export default {
       &:not(:last-child):after {
         content: none;
       }
-    }
-
-    &__icon {
-      width: vw-m(25px);
-      height: vw-m(25px);
     }
 
     &__text {
@@ -741,7 +731,7 @@ export default {
     }
 
     &__input {
-      padding: vw-m(5px);
+      padding: vw-m(7px);
       border: vw-m(1px) solid #fff;
       border-radius: vw-m(2px);
       font-size: vw-m(12px);
@@ -797,7 +787,7 @@ export default {
     &__label--file {
       font-size: vw-m(11px);
       border: vw-m(2px) solid $accent-light;
-      padding: vw-m(5px);
+      padding: vw-m(7px);
       border-radius: vw-m(2px);
       svg {
         margin-right: vw-m(5px);
@@ -842,14 +832,6 @@ export default {
     grid-template-columns: repeat(3, 1fr);
     gap: vw-m(25px);
     margin: vw-m(20px) 0 0 0;
-
-    &__link {
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-    }
   }
 
   .footer-contacts {

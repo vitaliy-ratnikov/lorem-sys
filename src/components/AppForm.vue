@@ -113,8 +113,7 @@ export default {
   components: { BaseButton, vSelect, VueSlider },
   methods: {
     onFileChange(e) {
-      const files = e.target.files;
-      this.files = files;
+      this.files = e.target.files;
     },
 
     submitForm() {
