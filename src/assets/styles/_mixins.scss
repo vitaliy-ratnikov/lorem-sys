@@ -1,0 +1,9 @@
+@function vw($target) {
+  $vw-context: (1920 * 0.01) * 1px;
+  @return ($target / $vw-context) * 1vw;
+}
+
+@function vw-m($target) {
+  $vw-context: (375 * 0.01) * 1px;
+  @return ($target / $vw-context) * 1vw;
+}
