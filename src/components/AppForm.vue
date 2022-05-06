@@ -148,6 +148,10 @@ export default {
     gap: vw(30px);
   }
 
+  &__item {
+    position: relative;
+  }
+
   &__item--range {
     grid-column: span 2;
   }
