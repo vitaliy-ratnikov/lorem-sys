@@ -426,6 +426,7 @@ export default {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    align-items: center;
   }
 
   &__copy {
@@ -807,7 +808,6 @@ export default {
 
     &__wrap {
       flex-direction: column;
-      align-items: center;
     }
 
     &__copy {
