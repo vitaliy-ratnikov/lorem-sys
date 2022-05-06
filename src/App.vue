@@ -714,18 +714,15 @@ export default {
 
   .main-form {
     &__row {
-      flex-direction: column;
+      grid-template-columns: 1fr;
+      gap: vw-m(20px);
     }
     &__row + &__row {
       margin: vw-m(25px) 0 0 0;
     }
-    &__item + &__item {
-      margin: vw-m(25px) 0 0 0;
-    }
     &__item {
-      flex: 1;
+      grid-column: auto;
     }
-
     &__item-info {
       font-size: vw-m(14px);
     }
@@ -776,7 +773,7 @@ export default {
     &__button {
       max-width: 100%;
       padding: vw-m(12px);
-      margin: vw-m(10px) auto 0 auto;
+      margin: vw-m(20px) auto 0 auto;
     }
 
     &__error {

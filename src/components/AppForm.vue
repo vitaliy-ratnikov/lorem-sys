@@ -70,15 +70,13 @@
       </div>
     </div>
 
-    <div class="main-form__row">
-      <base-button
-        accent
-        @click="submitForm"
-        type="button"
-        class="main-form__button"
-        >Отправить</base-button
-      >
-    </div>
+    <base-button
+      accent
+      @click="submitForm"
+      type="button"
+      class="main-form__button"
+      >Отправить</base-button
+    >
   </form>
 </template>
 
@@ -141,25 +139,17 @@ export default {
 
 <style lang="scss">
 .main-form {
+  &__row:not(:first-child) {
+    margin-top: vw(30px);
+  }
   &__row {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  &__row + &__row {
-    margin: vw(30px) 0 0 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: vw(30px);
   }
 
-  &__item + &__item {
-    margin-left: vw(30px);
-  }
-  &__item {
-    flex: 0 1 vw(370px);
-    position: relative;
-
-    &--range {
-      flex: 1;
-    }
+  &__item--range {
+    grid-column: span 2;
   }
 
   &__item-info {
@@ -277,6 +267,7 @@ export default {
     padding: vw(17px);
     text-align: center;
     margin: vw(40px) auto 0 auto;
+    display: block;
   }
 
   &__error {
@@ -291,6 +282,8 @@ export default {
     z-index: -1;
     position: absolute;
     opacity: 0;
+    left: 0;
+    top: 0;
   }
 
   &__label--file {
